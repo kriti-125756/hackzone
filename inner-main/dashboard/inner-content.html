@@ -1,0 +1,92 @@
+<style type="text/css">
+    .box{
+    width:25px;
+    height:25px;
+}
+ 
+.red{
+    background:#494750;
+}
+.green{
+    background:#999999;
+}
+.blue{
+    background:#cc3321;
+}
+</style>
+<div class="row" ng-controller="dashboardController as vt">
+
+
+                       
+<div class="col-lg-7">
+                                <div class="card-box">
+                                    <h4 class="text-dark header-title m-t-0">Today's food consumption stats</h4>
+                                    <p class="text-muted m-b-30 font-13">
+                                        Hover over the pie chart to see the number of students going for today's meal:
+                                    </p>
+                                    
+                                    <div class="nicescroll" style="height: 300px;">
+                                     <div class="col-sm-7">
+                                        <canvas id="doughnut" class="chart chart-doughnut" chart-options="vt.chartDoughnutOptions" chart-data="vt.chartDoughnutCharts" chart-colors="vt.chartDoughnutColours" chart-labels="vt.chartDoughnutLabels"></canvas>
+                                        </div>
+                                         <div class="col-sm-5">
+                                             <div class="box red"></div><br>
+                                             <div class="box green"> </div><br>
+                                             <div class="box blue"> </div><br>
+                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-5">
+                                <div class="card-box">
+                                    <h4 class="text-dark header-title m-t-0">Today's Menu</h4>
+                                    <p class="text-muted font-13">
+                                        The menu for today is
+                                    </p>
+                                    
+                                    <div class="nicescroll p-20" style="height: 320px;">
+                                        <div class="timeline-2">
+                                            <div class="time-item">
+                                                <div class="item-info">
+                                                    <div class="text-muted"><small>Breakfast</small></div>
+                                                    <p><strong><a href="#" class="text-info">X</a></strong> Y <strong>Z</strong></p>
+                                                </div>
+                                            </div>
+        
+                                            <div class="time-item">
+                                                <div class="item-info">
+                                                    <div class="text-muted"><small>Lunch</small></div>
+                                                    <p><a href="" class="text-info">X</a> Y</p>
+                                                    <!-- <p><em>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam laoreet tellus ut tincidunt euismod. "</em></p> -->
+                                                </div>
+                                            </div>
+        
+                                            <div class="time-item">
+                                                <div class="item-info">
+                                                    <div class="text-muted"><small>Evening Snacks</small></div>
+                                                    <p><a href="" class="text-info">X</a>Y <a href="#" class="text-success">Z</a>.</p>
+                                                  <!--   <p><em>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam laoreet tellus ut tincidunt euismod. "</em></p> -->
+                                                </div>
+                                            </div>
+        
+                                            <div class="time-item">
+                                                <div class="item-info">
+                                                    <div class="text-muted"><small>Dinner</small></div>
+                                                    <p><strong><a href="#" class="text-info">X</a></strong>Y</p>
+                                                </div>
+                                            </div>
+        
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+
+
+</div>
+
+
+        <script src="assets/js/jquery.core.js"></script>
+       
+                        

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html ng-app="LoginApp">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
+        <meta name="author" content="Coderthemes">
+
+        <link rel="shortcut icon" href="assets/images/favicon_1.ico">
+
+        <title>NutBit</title>
+
+        <!--Morris Chart CSS -->
+		    <link rel="stylesheet" href="assets/plugins/morris/morris.css">
+
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/core.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/components.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/icons.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/pages.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/responsive.css" rel="stylesheet" type="text/css" />
+        
+        <!-- loader css-->
+        <link href='assets/css/loading-bar.css' rel='stylesheet' />
+        <link href='http://fonts.googleapis.com/css?family=Oxygen:300,400,700' rel='stylesheet' type='text/css'>
+
+       
+
+
+        <style type="text/css">
+            .thumbnail {
+  width: 70px;
+  height: 70px;
+  /*border: 1px solid #F1C6C2;*/
+  border: 1px solid #CE8982
+}
+a {
+  font-size:16px;
+}.badge {
+  background-color: #428bca;
+}
+.meta, .meta-comments {
+  font-size:12px;
+  color: #333;
+  margin-bottom: 0;
+}
+.meta-comments {
+  font-weight: bold;
+}
+
+footer.navbar {
+  height: 65px;
+  width: 100%;
+  border-top: 1px solid #ccc;
+  box-shadow: 0 -1px 4px rgba(0,0,0,0.15);
+  margin: 0;
+  border-radius: 0;
+}
+.panel {
+  -webkit-transition: 0.75s ease-in-out all;
+  -moz-transition: 0.75s ease-in-out all;
+  -o-transition: 0.75s ease-in-out all;
+  transition: 0.75s ease-in-out all;
+  background-color: #fff;
+  border: none;
+  margin-bottom: 15px;
+}
+.panel a {
+  color: #e74c3c;
+  font-weight: bold;
+}
+.panel .badge {
+  background-color: #e74c3c;
+  color: #fff;
+}
+.panel.ng-enter {
+  opacity: 0;
+}
+.panel.ng-enter-active {
+  opacity: 1;
+  transition-delay: 0.5s;
+}
+.examples {
+  margin-bottom: 25px;
+  transition-delay: 0.5s;
+}
+
+.examples.ng-hide-add,
+.examples.ng-hide-remove,
+.loading-text.ng-hide-add,
+.loading-text.ng-hide-remove {
+  -webkit-transition:all linear 0.5s;
+  -moz-transition:all linear 0.5s;
+  -o-transition:all linear 0.5s;
+  transition:all linear 0.5s;
+  display:block!important;
+}
+.examples.ng-hide-add,
+.examples.ng-hide-remove {
+  transition-delay: 0.5s;
+}
+
+.examples.ng-hide-add.ng-hide-add-active,
+.examples.ng-hide-remove,
+.loading-text.ng-hide-add.ng-hide-add-active,
+.loading-text.ng-hide-remove {
+  opacity:0;
+}
+
+.examples.ng-hide-add,
+.examples.ng-hide-remove.ng-hide-remove-active,
+.loading-text.ng-hide-add,
+.loading-text.ng-hide-remove.ng-hide-remove-active {
+  opacity:1;
+}
+
+.examples .btn i {
+  top: 2px;
+}
+
+.examples span {
+  color: #A1FFC9;
+}
+
+.btn-primary {
+  background-color: #2ecc71;
+  border: 1px solid #27ae60;
+}
+.btn-primary:hover {
+  background-color: #32B96C;
+  border: 1px solid #27ae60;
+}
+
+.jumbotron {
+  color: #333;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  border-radius: 5px;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  margin-top: 15px;
+  border: 1px solid #ccc;
+  -webkit-transition:all linear 0.5s;
+  -moz-transition:all linear 0.5s;
+  -o-transition:all linear 0.5s;
+  transition:all linear 0.5s;
+}
+
+.jumbotron h1 {
+  color: #333;
+  letter-spacing: -2px;
+}
+
+.jumbotron small {
+  color: #999;
+}
+
+h1 {
+  font-family: 'Oxygen', sans;
+  /*padding-bottom: 10px;*/
+}
+
+h4 {
+  font-family: 'Oxygen', sans;
+  color: #888;
+  padding-bottom: 5px;
+  padding-top: 10px;
+}
+h4 span {
+  color: #e74c3c;
+}
+
+
+/*
+ * override the default CSS as an example
+ */
+
+#loading-bar .bar {
+  background: #2c3e50;
+}
+#loading-bar-spinner .spinner-icon {
+  border-top-color:  #2c3e50;
+  border-left-color: #2c3e50;
+}
+#loading-bar .peg {
+  -moz-box-shadow: #2c3e50 1px 0 6px 1px;
+  -ms-box-shadow: #2c3e50 1px 0 6px 1px;
+  -webkit-box-shadow: #2c3e50 1px 0 6px 1px;
+  box-shadow: #2c3e50 1px 0 6px 1px;
+}
+
+        </style>
+
+        <!-- HTML5 Shiv and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="assets/js/modernizr.min.js"></script>
+
+
+    </head>
+
+
+    <body class="fixed-left">
+
+       <ui-view>
+        </ui-view>
+
+
+
+        <script>
+            var resizefunc = [];
+        </script>
+
+        <!-- jQuery  -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/detect.js"></script>
+        <script src="assets/js/fastclick.js"></script>
+        <!-- angular files -->
+
+        <script src="assets/js/angular.min.js"></script>
+        <script src="assets/js/angular-route.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+         <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+        <script type="text/javascript" src="assets/js/angular-messages.min.js"></script>
+        <script type="text/javascript" src="assets/js/angular-touch.min.js"></script>
+        <script src="assets/js/index.js"></script>
+         
+        <script src="assets/js/angular-cookies.min.js"></script>
+        <script src="assets/js/jquery.core.js"></script>
+        <script src="assets/js/ui-bootstrap-tpls-2.1.4.min.js"></script>
+        <script src="assets/js/angular-ui-router.min.js"></script>
+
+        <!-- -->
+
+        <!-- loader files-->
+        <script type="text/javascript" src="assets/js/loading-bar.js"></script>
+
+        <!-- Charts js files -->
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/angular-chart.js/0.8.8/angular-chart.min.js'></script>
+
+        <script src="assets/js/jquery.slimscroll.js"></script>
+        <script src="assets/js/jquery.blockUI.js"></script>
+        <script src="assets/js/waves.js"></script>
+        <script src="assets/js/wow.min.js"></script>
+        <script src="assets/js/jquery.nicescroll.js"></script>
+        <script src="assets/js/jquery.scrollTo.min.js"></script>
+
+        <script src="assets/plugins/peity/jquery.peity.min.js"></script>
+
+        <!-- jQuery  -->
+        <script src="assets/plugins/waypoints/lib/jquery.waypoints.js"></script>
+        <script src="assets/plugins/counterup/jquery.counterup.min.js"></script>
+
+
+
+        <script src="assets/plugins/morris/morris.min.js"></script>
+        <script src="assets/plugins/raphael/raphael-min.js"></script>
+
+        <script src="assets/plugins/jquery-knob/jquery.knob.js"></script>
+
+        <script src="assets/pages/jquery.dashboard.js"></script>
+
+        <script src="assets/js/jquery.core.js"></script>
+        <script src="assets/js/jquery.app.js"></script>
+
+        <script type="text/javascript">
+            jQuery(document).ready(function($) {
+                $('.counter').counterUp({
+                    delay: 100,
+                    time: 1200
+                });
+
+                $(".knob").knob();
+
+            });
+        </script>
+
+
+
+
+    </body>
+</html>
